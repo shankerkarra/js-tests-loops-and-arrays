@@ -6,7 +6,10 @@
 // 1*2*3*4 = 24
 
 function factorials(num) {
-
+  if (0 == num)
+    return 1;
+  else
+    return num * factorials(num - 1);
 }
 
 // ------------------------------------------
@@ -17,7 +20,12 @@ function factorials(num) {
 // output: 20
 
 function rangeTotal(n1, n2) {
-
+  //2+3+4+5+6
+  let rangeTotal = 0;
+  for (i = n1; i <= n2; i++) {
+    rangeTotal += i;
+  }
+  return rangeTotal;
 }
 
 // ------------------------------------------
@@ -28,7 +36,16 @@ function rangeTotal(n1, n2) {
 // Example:
 // input: 15, 20, 5
 // output: 2
-
+/** */
 function rangeDivisor(start, end, divisor) {
+  let rangeDivisor = 0;
+  if (divisor != 0) {
+    for (i = start; i <= end; i++) {
+      if (i % divisor == 0) {
+        rangeDivisor += 1;
+      }
+    }
+  }
+  return rangeDivisor;
 
 }
